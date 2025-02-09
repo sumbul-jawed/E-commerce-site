@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { ClerkProvider } from "@clerk/nextjs";
 import { CartProvider } from "@/components/CartContext";
+import "./globals.css";
 
 export default function RootLayout({
   children,

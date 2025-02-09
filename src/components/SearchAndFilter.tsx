@@ -29,7 +29,7 @@ export default function SearchAndFilter({
   };
 
   return (
-    <div className="flex flex-wrap justify-between p-4 bg-[#fdcee9] rounded-md">
+    <div className="flex flex-wrap justify-between p-4 bg-[#fdcee9] rounded-md space-y-4 sm:space-y-0">
       {/* Search Bar */}
       <input
         type="text"
@@ -40,23 +40,23 @@ export default function SearchAndFilter({
       />
 
       {/* Price Filter */}
-      <div className="flex items-center space-x-2 mt-4 sm:mt-0">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 w-full sm:w-auto space-y-2 sm:space-y-0">
         <input
           type="number"
           placeholder="Enter Price"
-          className="p-2 border rounded-md"
+          className="p-2 border rounded-md flex-1 sm:flex-none"
           value={price}
           onChange={(e) => setPrice(e.target.value !== "" ? Number(e.target.value) : "")}
         />
         <button
           onClick={handleApplyFilters}
-          className="bg-pink-300 text-black px-6 py-2 rounded-md border border-black hover:bg-pink-100"
+          className="bg-pink-300 text-black px-6 py-2 rounded-md border border-black hover:bg-pink-100 w-full sm:w-auto"
         >
           Apply
         </button>
         <button
           onClick={handleResetFilters}
-          className="bg-pink-400 text-black px-6 py-2 rounded-md border border-black hover:bg-gray-100"
+          className="bg-pink-400 text-black px-6 py-2 rounded-md border border-black hover:bg-gray-100 w-full sm:w-auto"
         >
           All Products
         </button>

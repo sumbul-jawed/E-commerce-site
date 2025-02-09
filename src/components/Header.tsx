@@ -60,10 +60,10 @@ export default function Header() {
           <Link href="/login">
             <Icon icon="mdi:account-alert-outline" className="w-7 h-7 text-black" />
           </Link>
-          <Link href="/Asgaard">
+          <Link href="/search">
             <Icon icon="si:search-line" className="w-7 h-7 text-black" />
           </Link>
-          <Link href="/CheckOut">
+          <Link href="/Asgaard">
             <Icon icon="solar:heart-linear" className="w-7 h-7 text-black" />
           </Link>
           <Link href="/Cart">
