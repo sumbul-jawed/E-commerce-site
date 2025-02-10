@@ -1,9 +1,10 @@
-"use client"
-import { UserButton, useClerk } from "@clerk/clerk-react"
-import { useRouter } from "next/navigation"
-import { Sidebar } from "@/components/Sidebar"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts"
+"use client";
+
+import { UserButton, useClerk } from "@clerk/clerk-react";
+import { useRouter } from "next/navigation";
+import { Sidebar } from "@/components/Sidebar";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
 // Sample data for the chart
 const data = [
@@ -13,7 +14,7 @@ const data = [
   { name: "Apr", sales: 4500 },
   { name: "May", sales: 6000 },
   { name: "Jun", sales: 5500 },
-]
+];
 
 // Sample data for recent activities
 const recentActivities = [
@@ -21,23 +22,23 @@ const recentActivities = [
   { id: 2, action: "Product restocked", product: "Leather Sofa", time: "4 hours ago" },
   { id: 3, action: "Customer review", customer: "Jiya Sheikh", product: "Dining Table", time: "Yesterday" },
   { id: 4, action: "New customer registered", customer: "Mehak Nadeem", time: "2 days ago" },
-]
+];
 
 export default function Dashboard() {
-  const router = useRouter()
-  const { signOut } = useClerk()
+  const router = useRouter();
+  const { signOut } = useClerk();
 
   const handleSignOut = async () => {
-    await signOut()
-    router.push("/")
-  }
+    await signOut();
+    router.push("/");
+  };
 
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex flex-col lg:flex-row min-h-screen bg-gray-100 mt-20">
       <Sidebar />
       <div className="flex-1 flex flex-col overflow-hidden">
-        <header className="flex justify-between items-center p-4 bg-white shadow">
-          <h1 className="text-2xl font-semibold">Dashboard</h1>
+        <header className="flex justify-between items-center p-4 bg-white shadow sticky top-0 z-10">
+          <h1 className="text-xl md:text-2xl font-semibold">Dashboard</h1>
           <div className="flex items-center space-x-4">
             <UserButton />
             <button
@@ -48,8 +49,8 @@ export default function Dashboard() {
             </button>
           </div>
         </header>
-        <main className="flex-1 overflow-x-hidden overflow-y-auto p-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+        <main className="flex-1 overflow-x-hidden overflow-y-auto p-4 md:p-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6">
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
@@ -138,7 +139,7 @@ export default function Dashboard() {
               </CardContent>
             </Card>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
             <Card>
               <CardHeader>
                 <CardTitle>Monthly Sales</CardTitle>
@@ -178,6 +179,5 @@ export default function Dashboard() {
         </main>
       </div>
     </div>
-  )
+  );
 }
-

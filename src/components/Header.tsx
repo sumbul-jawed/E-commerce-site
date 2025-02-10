@@ -17,7 +17,7 @@ export default function Header() {
         {/* Logo Section */}
         <div className="flex items-center flex-shrink-0">
           <Image
-            src="/images/logg1.png"
+            src="/images/logo.png"
             alt="logo"
             className="w-[150px] h-[40px] md:w-[200px] md:h-[50px]"
             width={500}
@@ -31,7 +31,7 @@ export default function Header() {
             isOpen ? "block" : "hidden md:block"
           }`}
         >
-          <ul className="flex flex-col md:flex-row md:gap-[75px] text-[16px] font-medium p-4 md:p-0">
+          <ul className="flex flex-col md:flex-row md:gap-[50px] text-[18px] font-medium p-4 md:p-0">
             <li>
               <Link href="/" className="block py-2 md:py-0 hover:text-gray-500">
                 Home
